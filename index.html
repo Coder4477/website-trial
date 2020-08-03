@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cricket site</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <style>
+        body {font-family: Arial;}
+
+        /* Style the tab */
+        .tab {
+          overflow: hidden;
+          /*border: 1px solid #ccc;*/
+          background-color: #ffffff;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+          background-color: inherit; 
+          text-align: center;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          padding: 14px 16px;
+          transition: 0.3s;
+          font-size: 17px;
+          border-radius: 15px;
+          float: right;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+          background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+          background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+          display: none;
+          /*padding: 6px 12px;*/
+          /*border: 1px solid #ccc;*/
+          border-top: none;
+          width: 100%;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 15px;
+        }
+
+        th {
+            text-align: left;
+        }
+
+        table {
+            border-spacing: 5px;
+            width: 100%;
+        }
+
+        .news {
+          float: left;
+          text-align: center;
+        }
+
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .accordion:after {
+          content: '\002B';
+          color: #777;
+          font-weight: bold;
+          float: right;
+          margin-left: 5px;
+        }
+
+        .active:after {
+          content: "\2212";
+        }
+
+        .panel {
+          padding: 0 18px;
+          background-color: white;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.2s ease-out;
+        }
+    </style>
+
+  </head>
+  <body>
+
+    <!-- tablinks -->
+    <div class="tab">
+        <img src="logo.jpg" height="64px" width="64px">
+        <h1 style="height: 50px; color: black; float: right;"><b>WEBSITE NAME</b></h1>
+        <button class="tablinks" onclick="openTab(event, 'Games')">Games</button>
+        <button class="tablinks" onclick="openTab(event, 'Rankings')">Rankings</button>
+        <button class="tablinks" onclick="openTab(event, 'Highights')">Highights</button>
+        <button class="tablinks" onclick="openTab(event, 'Matches')">Matches</button>
+        <button class="tablinks" onclick="openTab(event, 'News')">News</button>
+        <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
+    </div>
+
+    
+
+
+    <!-- tab content -->
+
+    <!-- home -->
+    <div id="Home" class="tabcontent">
+        
+        <!-- live now -->
+        <h1>Live now</h1>
+        <div>
+            <div style="float: left;">
+            <a style="text-decoration: none;" href="">
+                <img style="height: 200px; width: 300px;" src="images/cricket.jpg">
+                <h2 style="text-align: center; color: black;">This is an example</h2>
+            </a>
+            </div>
+            <div style="float: center; text-align: center;">
+                <h2>Score</h2>
+                <h3>England - Ireland</h3>
+                <h3>0-0 (0.0) 0-0 (0.0)</h3>
+                <h3>0-0 (0.0) 0-0 (0.0)</h3>
+            </div>
+         </div>
+
+         <hr style="height: 100px; color: white; border: none;">
+         <hr>
+
+         <!-- news -->
+         <h1>Latest News</h1>
+         <div class="news">
+            <a href="" style="text-decoration: none;">
+                <img src="images/cricket.jpg" style="height: 150px; width: 200px; margin: 10px;">
+                <h3>This is an example</h3>
+            </a>
+        </div>
+        <div class="news">
+            <a href="" style="text-decoration: none;">
+                <img src="images/cricket.jpg" style="height: 150px; width: 200px; margin: 10px;">
+                <h3>This is an example</h3>
+            </a>
+        </div>
+
+        <hr style="color: white; border: none; width: 100%;">
+        <hr>
+
+        <!-- matches -->
+        <h1>Previous and Upcoming Matches</h1>
+        <div class="news">
+            <a href="" style="text-decoration: none;">
+                <img src="images/cricket.jpg" style="height: 150px; width: 200px; margin: 10px;">
+                <h3>This is an example</h3>
+                <h3>Previous</h3>
+                <h3>13 December</h3>
+            </a>
+        </div>
+        <div class="news">
+            <a href="" style="text-decoration: none;">
+                <img src="images/cricket.jpg" style="height: 150px; width: 200px; margin: 10px;">
+                <h3>This is an example</h3>
+                <h3>Previous</h3>
+                <h3>13 December</h3>
+            </a>
+        </div>
+        <div class="news">
+            <a href="" style="text-decoration: none;">
+                <img src="images/cricket.jpg" style="height: 150px; width: 200px; margin: 10px;">
+                <h3>This is an example</h3>
+                <h3>Live</h3>
+                <h3>13 December</h3>
+            </a>
+        </div>
+        <div class="news">
+            <a href="" style="text-decoration: none;">
+                <img src="images/cricket.jpg" style="height: 150px; width: 200px; margin: 10px;">
+                <h3>This is an example</h3>
+                <h3>Upcoming</h3>
+                <h3>13 December</h3>
+            </a>
+        </div>
+        <div class="news">
+            <a href="" style="text-decoration: none;">
+                <img src="images/cricket.jpg" style="height: 150px; width: 200px; margin: 10px;">
+                <h3>This is an example</h3>
+                <h3>Upcoming</h3>
+                <h3>13 December</h3>
+            </a>
+        </div>
+        <div class="news">
+            <a href="" style="text-decoration: none;">
+                <img src="images/cricket.jpg" style="height: 150px; width: 200px; margin: 10px;">
+                <h3>This is an example</h3>
+                <h3>Upcoming</h3>
+                <h3>13 December</h3>
+            </a>
+        </div>
+
+        <hr style="color: white; border: none; width: 100%;">
+        <hr>
+
+        <!-- Highlights -->
+        <div>
+            <!-- title -->
+            <h1>England vs West Indies 3rd Test</h1>
+            <!-- day 1 -->
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/H5L5a96Yt-I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- day 2 -->
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/7FZWdWMoeqw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- day 3 -->
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/kur6gtWkkXg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- day 5 -->
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/QVHGYxWb4yw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+    </div>
+
+
+
+    <!-- News -->
+    <div id="News" class="tabcontent">
+        <div class="news">
+            <a href="" style="text-decoration: none;">
+                <img src="images/cricket.jpg" style="height: 200px; width: 300px; margin: 10px;">
+                <h2>This is an example</h2>
+            </a>
+        </div>
+        <div class="news">
+            <a href="" style="text-decoration: none;">
+                <img src="images/cricket.jpg" style="height: 200px; width: 300px; margin: 10px;">
+                <h2>This is an example</h2>
+            </a>
+        </div>
+    </div>
+
+
+
+    <!-- Matches -->
+    <div id="Matches" class="tabcontent">
+        
+        <!-- live now -->
+        <h1>Live now</h1>
+        <div>
+            <div style="float: left;">
+            <a style="text-decoration: none;" href="">
+                <img style="height: 200px; width: 300px;" src="images/cricket.jpg">
+                <h2 style="text-align: center; color: black;">This is an example</h2>
+            </a>
+            </div>
+            <div style="float: center; text-align: center;">
+                <h2>Score</h2>
+                <h3>England - Ireland</h3>
+                <h3>0-0 (0.0) 0-0 (0.0)</h3>
+                <h3>0-0 (0.0) 0-0 (0.0)</h3>
+            </div>
+         </div>
+
+        <hr style="height: 100px; color: white; border: none;">
+        <hr>
+
+        <!-- upcoming -->
+        <h1>Upcoming</h1>
+        <div class="news">
+            <a href="" style="text-decoration: none;">
+                <img src="images/cricket.jpg" style="height: 150px; width: 200px; margin: 10px;">
+                <h3>This is an example</h3>
+                <h3>13 December</h3>
+            </a>
+        </div>
+        <div class="news">
+            <a href="" style="text-decoration: none;">
+                <img src="images/cricket.jpg" style="height: 150px; width: 200px; margin: 10px;">
+                <h3>This is an example</h3>
+                <h3>13 December</h3>
+            </a>
+        </div>
+        <div class="news">
+            <a href="" style="text-decoration: none;">
+                <img src="images/cricket.jpg" style="height: 150px; width: 200px; margin: 10px;">
+                <h3>This is an example</h3>
+                <h3>13 December</h3>
+            </a>
+        </div>
+        <div class="news">
+            <a href="" style="text-decoration: none;">
+                <img src="images/cricket.jpg" style="height: 150px; width: 200px; margin: 10px;">
+                <h3>This is an example</h3>
+                <h3>13 December</h3>
+            </a>
+        </div>
+        <div class="news">
+            <a href="" style="text-decoration: none;">
+                <img src="images/cricket.jpg" style="height: 150px; width: 200px; margin: 10px;">
+                <h3>This is an example</h3>
+                <h3>13 December</h3>
+            </a>
+        </div>
+        <div class="news">
+            <a href="" style="text-decoration: none;">
+                <img src="images/cricket.jpg" style="height: 150px; width: 200px; margin: 10px;">
+                <h3>This is an example</h3>
+                <h3>13 December</h3>
+            </a>
+        </div>
+
+        <hr style="color: white; height: 180px; border: none;">
+        <hr style="align-content: left; width: 100%;">
+
+        <!-- previous -->
+        <h1 style="align-content: left;">Previous</h1>
+        <div class="news">
+            <a href="" style="text-decoration: none;">
+                <img src="images/cricket.jpg" style="height: 150px; width: 200px; margin: 10px;">
+                <h3>This is an example</h3>
+            </a>
+        </div>
+        <div class="news">
+            <a href="" style="text-decoration: none;">
+                <img src="images/cricket.jpg" style="height: 150px; width: 200px; margin: 10px;">
+                <h3>This is an example</h3>
+            </a>
+        </div>
+
+    </div>
+
+
+
+    <!-- highights -->
+    <div id="Highights" class="tabcontent">
+        
+        <!-- England vs West Indies 3rd Test -->
+        <div>
+            <!-- title -->
+            <h2>England vs West Indies 3rd Test</h2>
+            <!-- day 1 -->
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/H5L5a96Yt-I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- day 2 -->
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/7FZWdWMoeqw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- day 3 -->
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/kur6gtWkkXg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- day 5 -->
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/QVHGYxWb4yw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <hr>
+
+        <!-- England vs West Indies 2nd Test -->
+        <div>
+            <!-- title -->
+            <h2>England vs West Indies 2nd Test</h2>
+            <!-- day 1 -->
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/XUZMa66S4c4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- day 2 -->
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/hdJpchUP64c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- day 4 -->
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/RHah_urs8Cg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- day 5 -->
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/peiLp9DDIOY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <hr>
+
+        <!-- England vs West Indies 1st Test --> 
+        <div>
+            <!-- title -->
+            <h2>England vs West Indies 1st Test</h2>
+            <!-- day 1 -->
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/lK0dncGJZlU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- day 2 -->
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/I8Hcflwp_zE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- day 3 -->
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/oGSWAdz4ndI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- day 4 -->
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/6e1EZWiBfO4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- day 5 -->
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/UhKfmUSHIYU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <hr>
+
+        <p>All highlights videos and their rights belong to the owners of their respective channels on Youtube.</p>
+
+    </div>
+
+
+
+    <!-- rankings -->
+    <div id="Rankings" class="tabcontent">
+        <h3 style="text-align: center;">Here are the official team and player rankings from <a href="https://www.icc-cricket.com/rankings/mens/overview" style="text-decoration: none; color: black;">ICC:</a></h3>
+        <table style="text-align: center;">
+            <!-- header -->
+            <tr>
+                <th style="text-align: center;">Gender</th>
+                <th style="text-align: center;">Type</th>
+                <th style="text-align: center;">Game Version</th>
+            </tr>
+            <!-- Men Team Test -->
+            <tr>
+                <td>Men</td>
+                <td>Team</td>
+                <td><a href="https://www.icc-cricket.com/rankings/mens/team-rankings/test" style="color: black;">Test</a></td>
+            </tr>
+            <!-- Men Team ODI -->
+            <tr>
+                <td>Men</td>
+                <td>Team</td>
+                <td><a href="https://www.icc-cricket.com/rankings/mens/team-rankings/odi" style="color: black;">ODI</a></td>
+            </tr>
+            <!-- Men Team T20 -->
+            <tr>
+                <td>Men</td>
+                <td>Teams</td>
+                <td><a href="https://www.icc-cricket.com/rankings/mens/team-rankings/t20i" style="color: black;">T20</a></td>
+            </tr>
+            <!-- Men Player Test -->
+            <tr>
+                <td>Men</td>
+                <td>Player</td>
+                <td><a href="https://www.icc-cricket.com/rankings/mens/player-rankings/test" style="color: black;">Test</a></td>
+            </tr>
+            <!-- Men Player ODI -->
+            <tr>
+                <td>Men</td>
+                <td>Player</td>
+                <td><a href="https://www.icc-cricket.com/rankings/mens/player-rankings/odi" style="color: black;">ODI</a></td>
+            </tr>
+            <!-- Men Player T20 -->
+            <tr>
+                <td>Men</td>
+                <td>Player</td>
+                <td><a href="https://www.icc-cricket.com/rankings/mens/team-rankings/t20i" style="color: black;">T20</a></td>
+            </tr>
+            <!-- Women Team ODI -->
+            <tr>
+                <td>Women</td>
+                <td>Team</td>
+                <td><a href="https://www.icc-cricket.com/rankings/womens/team-rankings/odi" style="color: black;">ODI</a></td>
+            </tr>
+            <!-- Women Team T20 -->
+            <tr>
+                <td>Women</td>
+                <td>Teams</td>
+                <td><a href="https://www.icc-cricket.com/rankings/womens/team-rankings/t20i" style="color: black;">T20</a></td>
+            </tr>
+            <!-- Women Player ODI -->
+            <tr>
+                <td>Women</td>
+                <td>Player</td>
+                <td><a href="https://www.icc-cricket.com/rankings/womens/player-rankings/odi" style="color: black;">ODI</a></td>
+            </tr>
+            <!-- Women Player T20 -->
+            <tr>
+                <td>Women</td>
+                <td>Player</td>
+                <td><a href="https://www.icc-cricket.com/rankings/womens/team-rankings/t20i" style="color: black;">T20</a></td>
+            </tr>
+        </table>
+        <p>All rankings are created and scored by the ICC.</p>
+    </div>
+
+
+    <!-- games -->
+    <div id="Games" class="tabcontent">
+
+        <hr style="color: white; border: none;">
+        
+        <button class="accordion">Power Cricket T20</button>
+        <div align='center' class="panel">
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,16,0" id="game" height="530" width="650">
+                <param name="movie" value="http://www.cricketgames.me/games/swf/power-cricket-t20.swf" />
+                <param name="quality" value="high" />
+                <param name="allowscriptaccess" value="always" />
+                <embed src="http://www.cricketgames.me/games/swf/power-cricket-t20.swf" height="530" width="650" quality="high" name="FlashContent" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>
+            </object>
+        </div>
+
+        <button class="accordion">Ultimate Cricket</button>
+        <div align='center' class="panel">
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,16,0" id="game" height="485" width="650">
+                <param name="movie" value="http://www.cricketgames.me/games/swf/online-cricket.swf" />
+                <param name="quality" value="high" />
+                <param name="allowscriptaccess" value="always" />
+                <embed src="http://www.cricketgames.me/games/swf/online-cricket.swf" height="485" width="650" quality="high" name="FlashContent" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>
+            </object>
+        </div>
+
+        <button class="accordion">Super Sixes</button>
+        <div align='center' class="panel">
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,16,0" id="game" height="530" width="650">
+                <param name="movie" value="http://www.cricketgames.me/games/swf/cricket-super-sixes-challenge.swf" />
+                <param name="quality" value="high" />
+                <param name="allowscriptaccess" value="always" />
+                <embed src="http://www.cricketgames.me/games/swf/cricket-super-sixes-challenge.swf" height="530" width="650" quality="high" name="FlashContent" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>
+            </object>
+        </div>
+
+        <button class="accordion">Super Sixers 2</button>
+        <div align='center' class="panel">
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,16,0" id="game" height="450" width="550">
+                <param name="movie" value="http://www.cricketgames.me/games/swf/super-sixers-2.swf" />
+                <param name="quality" value="high" />
+                <param name="allowscriptaccess" value="always" />
+                <embed src="http://www.cricketgames.me/games/swf/super-sixers-2.swf" height="450" width="550" quality="high" name="FlashContent" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>
+            </object>
+        </div>
+
+        <button class="accordion">Turbo Cricket</button>
+        <div align='center' class="panel">
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,16,0" id="game" height="460" width="610">
+                <param name="movie" value="http://www.cricketgames.me/games/swf/turbo-cricket.swf" />
+                <param name="quality" value="high" />
+                <param name="allowscriptaccess" value="always" />
+                <embed src="http://www.cricketgames.me/games/swf/turbo-cricket.swf" height="460" width="610" quality="high" name="FlashContent" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>
+            </object>
+        </div>
+
+        <button class="accordion">Wicket Keeping Volt</button>
+        <div align='center' class="panel" >
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,16,0" id="game" height="435" width="650">
+                <param name="movie" value="http://www.cricketgames.me/games/swf/wicket-keeping-volt.swf" />
+                <param name="quality" value="high" />
+                <param name="allowscriptaccess" value="always" />
+                <embed src="http://www.cricketgames.me/games/swf/wicket-keeping-volt.swf" height="435" width="650" quality="high" name="FlashContent" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>
+            </object>
+        </div>
+
+        <hr>
+
+        <p>All games come from the website http://www.cricketgames.me/. Click <a href="http://www.cricketgames.me/">here</a> to visit their site and play more games.</p>
+
+        <p>Note: The games will not work on the chrome browser in 2021, due to the fact that google will no longer support Adobe Flash next year.</p>
+
+    </div>
+
+
+
+
+
+
+
+    <script>
+        function openTab(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+
+
+        
+        //accodrion:
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+          });
+        }
+    </script>
+
+  </body>
+</html>

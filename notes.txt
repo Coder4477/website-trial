@@ -1,0 +1,18 @@
+to-do:
+    
+    Name
+
+    Other pages:
+    - create matches (and news) templat(es)
+    - complete news and matches
+
+    Upload:
+    - make final checks on site
+    - upload to internet on:
+      - https://www.netlify.com/
+      - https://fast.io/
+    - get custom domain
+
+    Monetize:
+    - put adds in site
+    - work on creating merchendise
